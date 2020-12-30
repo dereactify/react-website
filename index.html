@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React: A Javascript Library for bloating the web.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-dark text-white">
+            <a class="navbar-brand" href="javascript:void(0)">React</a>
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">Docs</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Tutorial</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Blog</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Community</a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="text-normal d2">React</h1>
+        <h2 class="text-white">A JavaScript library for building user interfaces</h2>
+        <button class="btn btn-normal btn-lg m3">Get Started</button>
+        <a href="javascript:void(0);">Take the tutorial</a>
+    </header><br><br>
+    <main class="container">
+        <div class="flexbox multiline">
+            <div class="column">
+                <h3 class="text-muted">Declarative</h3>
+                <h5>React makes it painless to create interactive UIs.
+                    Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+                    Declarative views make your code more predictable and easier to debug.</h5>
+            </div>
+            <div class="column">
+                <h3 class="text-muted">Component-Based</h3>
+                <h5>Build encapsulated components that manage their own state, then compose them to make complex UIs.
+
+                    Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.</h5>
+            </div>
+            <div class="column">
+                <h3 class="text-muted">Learn Once, Write Anywhere</h3>
+                <h5>We don’t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code.
+
+                    React can also render on the server using Node and power mobile apps using React Native.</h5>
+            </div>
+        </div>
+        <br><br>
+        <hr>
+        <br><br>
+        <div class="flexbox multiline">
+            <div class="column flex-40">
+                <h2>A Simple Component</h2>
+                <h5>React components implement a render() method that takes input data and returns what to display. This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed by render() via this.props.
+
+                    JSX is optional and not required to use React. Try the Babel REPL to see the raw JavaScript code produced by the JSX compilation step.</h5>
+            </div>
+            <div class="column flex-50">
+                <div class="flexbox codey">
+                    <code class="column flex-70">
+                        &lt;p&gt;Hello&nbsp;Taylor&lt;/p&gt;
+                    </code>
+                    <div class="column flex-30">Hello Taylor</div>
+                </div>
+            </div>
+
+            <div class="column flex-40">
+                <h2>A Stateful Component</h2>
+                <h5>In addition to taking input data (accessed via this.props), a component can maintain internal state data (accessed via this.state). When a component’s state data changes, the rendered markup will be updated by re-invoking render().</h5>
+            </div>
+            <div class="column flex-50">
+                <div class="flexbox codey">
+                    <code class="column flex-70">
+                        &lt;span id="timer"&gt;{{ Loading... }}&lt;/p&gt;<br>
+                        &lt;script&gt;<br>
+                        let sec = 0;<br>
+                        setInterval(() => {<br>
+                            sec++;<br>
+                            document.querySelector("#timer").innerText = sec;<br>
+                        }, 1000);<br>
+                        &lt;/script&gt;
+                    </code>
+                    <div class="column flex-30" id="timer">{{ Loading... }}</div>
+                    <script>
+                        let sec = 0;
+                        setInterval(() => {
+                            sec++;
+                            document.querySelector("#timer").innerText = sec;
+                        }, 1000);
+                    </script>
+                </div>
+            </div>
+
+            <div class="column flex-40">
+                <h2>An Application</h2>
+                <h5>Using props and state, we can put together a small Todo application. This example uses state to track the current list of items as well as the text that the user has entered. Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation.</h5>
+            </div>
+            <div class="column flex-50">
+                <div class="flexbox codey">
+                    <code class="column flex-70">
+                        &lt;h2&gt;TODO&lt;/h2&gt;<br>
+                        &lt;h5&gt;What&nbsp;needs&nbsp;to&nbsp;be&nbsp;done?&lt;/h5&gt;<br>
+                        &lt;ul&nbsp;id=&quot;todos&quot;&gt;&lt;/ul&gt;<br>
+                        &lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;supertext&quot;&nbsp;id=&quot;supertext&quot;&gt;&lt;br&gt;&lt;br&gt;<br>
+                        &lt;button&nbsp;id=&quot;myBtn&quot;&nbsp;onclick=&quot;addTodo();&quot;&gt;Add&nbsp;#1&lt;/button&gt;<br>
+                        &lt;script&gt;<br>
+                        let todoCount = 0;<br>
+                        function addTodo() {<br>
+                            todoCount++;<br>
+                            document.querySelector("#todos").innerHTML += `&lt;li&gt;${document.querySelector("#supertext").value}&lt;/li&gt;`;<br>
+                            document.querySelector("#myBtn").textContent = `Add #${todoCount}`;<br>
+                        }<br>
+                    &lt;/script&gt;
+                    </code>
+                    <div class="column flex-30">
+                        <h2>TODO</h2>
+                        <h5>What needs to be done?</h5>
+                        <ul id="todos"></ul>
+                        <input type="text" name="supertext" id="supertext"><br><br>
+                        <button class="btn btn-normal" id="myBtn" onclick="addTodo();">Add #1</button>
+                    </div>
+                    <script>
+                        let todoCount = 0;
+                        function addTodo() {
+                            todoCount++;
+                            document.querySelector("#todos").innerHTML += `<li>${document.querySelector("#supertext").value}</li>`;
+                            document.querySelector("#myBtn").textContent = `Add #${todoCount}`;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </main>
+    <footer>
+        <button class="btn btn-normal btn-lg m3">Get Started</button>
+        <a href="javascript:void(0);">Take the tutorial</a>
+    </footer>
+</body>
+
+</html>
